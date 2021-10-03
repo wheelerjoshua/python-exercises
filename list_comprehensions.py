@@ -27,49 +27,82 @@ capitalized_fruits
 
 # Exercise 3 - Use a list comprehension to make a variable named fruits_with_more_than_two_vowels. Hint: You'll need a way to check if something is a vowel.
 vowels = ['a','e','i','o','u','A','E','I','O','U']
-is_vowels = 0
-fruits_with_more_than_two_vowels = [for fruit in fruits for l in fruit if l in vowels ]
+fruits_with_more_than_two_vowels = [fruit for fruit in fruits if len([letter for letter in fruit if letter in vowels]) >= 3]
+print(fruits_with_more_than_two_vowels)
+
 #for fruit in fruits:
 #    vowel_count = 0
-#    is_vowels = fruit
-#    for l in is_vowels:
-#        if l in vowels:
+#    for letter in fruit:
+#        if letter in vowels:
 #            vowel_count += 1
 #    if vowel_count >= 3:
 #        fruits_with_more_than_two_vowels.append(fruit)
-print(fruits_with_more_than_two_vowels)
-
-            
 
 
 # Exercise 4 - make a variable named fruits_with_only_two_vowels. The result should be ['mango', 'kiwi', 'strawberry']
-fruits_with_only_two_vowels = []
-
+fruits_with_only_two_vowels = [fruit for fruit in fruits if len([letter for letter in fruit if letter in vowels]) == 2]
+print(fruits_with_only_two_vowels)
 
 # Exercise 5 - make a list that contains each fruit with more than 5 characters
+fruits_with_more_than_five_characters = [fruit for fruit in fruits if len(fruit) > 5]
+print(fruits_with_more_than_five_characters)
 
 # Exercise 6 - make a list that contains each fruit with exactly 5 characters
+fruits_with_5_characters = [fruit for fruit in fruits if len(fruit) == 5]
+print(fruits_with_5_characters)
+
 
 # Exercise 7 - Make a list that contains fruits that have less than 5 characters
+fruits_with_less_than_5_characters = [fruit for fruit in fruits if len(fruit) < 5]
+print(fruits_with_less_than_5_characters)
+
 
 # Exercise 8 - Make a list containing the number of characters in each fruit. Output would be [5, 4, 10, etc... ]
+number_of_characters_for_each_fruit = [len(fruit) for fruit in fruits]
+print(number_of_characters_for_each_fruit)
 
 # Exercise 9 - Make a variable named fruits_with_letter_a that contains a list of only the fruits that contain the letter "a"
+fruits_with_letter_a = [fruit for fruit in fruits for letter in fruit if letter in ['a']]
+print(fruits_with_letter_a)
+
 
 # Exercise 10 - Make a variable named even_numbers that holds only the even numbers 
+even_numbers = [number for number in numbers if number % 2 == 0]
+print(even_numbers)
+
 
 # Exercise 11 - Make a variable named odd_numbers that holds only the odd numbers
+odd_numbers = [number for number in numbers if number % 2 == 1]
+print(odd_numbers)
+
+
 
 # Exercise 12 - Make a variable named positive_numbers that holds only the positive numbers
+positive_numbers = [number for number in numbers if number > 0]
+positive_numbers
+
 
 # Exercise 13 - Make a variable named negative_numbers that holds only the negative numbers
+negative_numbers = [number for number in numbers if number < 0]
+negative_numbers
 
 # Exercise 14 - use a list comprehension w/ a conditional in order to produce a list of numbers with 2 or more numerals
+numbers_with_2_numerals = [number for number in numbers if len(str(abs(number))) >= 2]
+numbers_with_2_numerals
 
 # Exercise 15 - Make a variable named numbers_squared that contains the numbers list with each element squared. Output is [4, 9, 16, etc...]
+numbers_squared = [number ** 2 for number in numbers]
+numbers_squared
+
 
 # Exercise 16 - Make a variable named odd_negative_numbers that contains only the numbers that are both odd and negative.
+odd_negative_numbers = [number for number in numbers if number < 0 and number % 2 == 1]
+odd_negative_numbers
+
 
 # Exercise 17 - Make a variable named numbers_plus_5. In it, return a list containing each number plus five. 
+numbers_plus_5 = [number + 5 for number in numbers]
+numbers_plus_5
+
 
 # BONUS Make a variable named "primes" that is a list containing the prime numbers in the numbers list. *Hint* you may want to make or find a helper function that determines if a given number is prime or not.
