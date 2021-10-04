@@ -48,10 +48,10 @@ password = ' notastrongpassword'
 
 
 # Bonus
-if username[0] == ' ':
+if username[0] == ' ' or username[-1] == ' ':
     username = username.strip()
     print('Username cannot contain spaces')
-if password[0] == ' ':
+if password[0] == ' ' or password[-1] == ' ':
     password = password.strip()
     print('Password cannot contain spaces')
 #

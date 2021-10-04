@@ -63,7 +63,7 @@ print(number_of_characters_for_each_fruit)
 
 # Exercise 9 - Make a variable named fruits_with_letter_a that contains a list of only the fruits that contain the letter "a"
 fruits_with_letter_a = [fruit for fruit in fruits for letter in fruit if letter in ['a']]
-print(fruits_with_letter_a)
+print(list(set(fruits_with_letter_a)))
 
 
 # Exercise 10 - Make a variable named even_numbers that holds only the even numbers 
