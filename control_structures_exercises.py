@@ -63,26 +63,31 @@ for l in range(1,10):
     n += 1
     n = str(n)
 
+for i in range(1,10):
+    print(str(i) * i)
 
 ################# 2c.
-odd_between_one_and_fifty = input('Enter an odd number between 1 and 50: ')
-while odd_between_one_and_fifty.isdigit() == False or int(odd_between_one_and_fifty) > 50 or int(odd_between_one_and_fifty) < 1 or int(odd_between_one_and_fifty) % 2 != 1:
-    print('You have entered an invalid number.')
+#odd_between_one_and_fifty = input('Enter an odd number between 1 and 50: ')
+#while odd_between_one_and_fifty.isdigit() == False or int(odd_between_one_and_fifty) > 50 or int(odd_between_one_and_fifty) < 1 or int(odd_between_one_and_fifty) % 2 != 1:
+#    print('You have entered an invalid number.')
+#    odd_between_one_and_fifty = input('Enter an odd number between 1 and 50: ')
+#    if odd_between_one_and_fifty.isdigit() == True and int(odd_between_one_and_fifty) < 50 and int(odd_between_one_and_fifty) > 0 and int(odd_between_one_and_fifty) % 2 == 1: 
+#        odd_between_one_and_fifty = int(odd_between_one_and_fifty)
+#        break
+
+while 1 == 1:
     odd_between_one_and_fifty = input('Enter an odd number between 1 and 50: ')
     if odd_between_one_and_fifty.isdigit() == True and int(odd_between_one_and_fifty) < 50 and int(odd_between_one_and_fifty) > 0 and int(odd_between_one_and_fifty) % 2 == 1: 
         odd_between_one_and_fifty = int(odd_between_one_and_fifty)
         break
-
-odd_between_one_and_fifty = int(odd_between_one_and_fifty)
-#type(odd_between_one_and_fifty)
+    else:
+        print('Try again. ')
 print('Number to skip is: ', odd_between_one_and_fifty)
 for odd_number in range(1,50):
+    if odd_number % 2 == 0:
+        continue
     if odd_number == odd_between_one_and_fifty:
         print('Yikes! Skipping number: ', odd_number)
- #       continue
- #   if odd_number % 2 == 1:
-  #          if odd_number != odd_between_one_and_fifty:
-   #             print('Here is an odd number: ', odd_number)
     else:
         print('Here is an odd number: ', odd_number)
     
@@ -110,12 +115,14 @@ for number in range(positive_integer, 0, -1):
 
 ################# 3. Fizzbuzz
 for number in range(1,101):
-    if number % 3 == 0:
+    if number % 3 == 0 and number % 5 == 0:
+        print('FizzBuzz')
+    elif number % 3 == 0:
         print('Fizz')
     elif number % 5 == 0:
         print('Buzz')
-    if number % 3 == 0 and number % 5 == 0:
-        print('FizzBuzz')
+    else:
+        print(number)
 
 
 ################# 4. 
@@ -160,6 +167,7 @@ while user_continue == True:
             print('Your grade is a C-')
         else:
             print('Your grade is a C')
+
     elif 60 <= user_grade <= 66:
         if 65 <= user_grade <= 66:
             print('Your grade is a D+')
@@ -169,9 +177,10 @@ while user_continue == True:
             print('Your grade is a D')
     else:
         print('Your grade is an F')
-    user_continue = input('Would you like to continue? Enter y or n: ')
-    if user_continue.lower() == 'y' or user_continue.lower() == 'yes':
-        user_continue = True
+    user_continue_ask = input('Would you like to continue? Enter y or n: ')
+    if user_continue_ask.lower() == 'y' or user_continue.lower() == 'yes':
+        continue
+#        user_continue = True
     else:
         print('Thanks for playing!')
         user_continue = False
