@@ -86,7 +86,7 @@ capitalize_word_starting_consonant('Bear')
 
 # This function utilizes the is_consonant function to check if the first character in the argument is a consonant. If this returns True, the word is capitalized.
 
-# In[19]:
+# In[1]:
 
 
 # Defines a function that takes in two numbers, either both float or a float and an integer, and returns a float
@@ -95,7 +95,7 @@ def calculate_tip(percentage, bill_total):
     if 0 <= percentage <= 1:
         # Calculates the tip by multiplying the bill_total and percentage arguments and adding it to the bill_total
         # this value is then returned. In case of longer decimal values, the total is rounded to the second decimal
-        return round(((percentage * bill_total) + bill_total), 2)
+        return round((percentage * bill_total), 2)
     
     
 calculate_tip(0.20, 20)
@@ -186,7 +186,7 @@ remove_vowels('bbbbb')
 
 # This function takes in a string and returns a string with the vowels removed. This is accomplished by creating a new_string variable with an empty string and a for loop that checks if each character in the argument is a vowel using the is_vowel function. If the character is not a vowel, it is added to the new_string. The new_string is returned. A string of vowels returns an empty string.
 
-# In[5]:
+# In[4]:
 
 
 # List to define the alphabet
@@ -194,6 +194,9 @@ alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
 
 # Defines function that takes in a string and returns a string
 def normalize_name(name):
+    # While loop ensures first character is a letter
+    while name[0].isalpha() == False:
+        name = name[1:]
     # Defines a variable with an empty string
     new_name = ''
     # Loop that will pass each character in the original string
@@ -201,7 +204,7 @@ def normalize_name(name):
         # if the character is in the alphabet or a space, it is added to the new string.
         if character.lower() in alphabet or character == ' ':
             new_name += character.lower()
-    # Strips the new_name string of any leading white spaces
+    # Strips the new_name string of any trailing white spaces
     new_name = new_name.strip()
     # Loop that checks each character in the new_string
     for character in new_name:
@@ -214,6 +217,8 @@ def normalize_name(name):
 normalize_name('Name')
 normalize_name('First Name')
 normalize_name('% Completed')
+normalize_name('13_this is A VALID python IDenTiFIER')
+normalize_name('True')
 
 
 # This function normalizes names, passing a string and returning a string. Each character in the argument is checked to see if they are in the alphabet or a space and is added to an empty new_string variable. This variable is then stripped of leading or trailing white spaces and passed through another for loop to check each character for any remaining spaces. These are then replaced with an underscore and the new_name string is returned.
