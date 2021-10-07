@@ -122,19 +122,21 @@ apply_discount(.75, 10)
 
 # This function is used to apply a discount, subtracting the discounted price from the original price. The discounted price is calculated by multiplying the discount_percentage and the original_price. The discounted price is returned. Mixing up the discount and the price when passing them to the function results in a negative number.
 
-# In[24]:
+# In[2]:
 
 
 # Defines a function that takes in a string and returns an int
 def handle_commas(number):
     # Defines a variable that is the passed argument with the commas being replaced by an empty string, removing the commas
     clean_number = number.replace(',','')
-    # The clean_number is returned as an int
-    return int(clean_number)
+    # The clean_number is returned as an float
+    return float(clean_number)
 
-handle_commas('1,000,000')
-#handle_commas(1,000,000)
-#handle_commas(1_000_000)
+
+# In[ ]:
+
+
+total = 0
 
 
 # This function passes a string of a number with commas and removes the commas by replacing the commas with an empty string. The resulting string is returned converted into an integer.
@@ -186,7 +188,7 @@ remove_vowels('bbbbb')
 
 # This function takes in a string and returns a string with the vowels removed. This is accomplished by creating a new_string variable with an empty string and a for loop that checks if each character in the argument is a vowel using the is_vowel function. If the character is not a vowel, it is added to the new_string. The new_string is returned. A string of vowels returns an empty string.
 
-# In[4]:
+# In[1]:
 
 
 # List to define the alphabet
